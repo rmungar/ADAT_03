@@ -13,7 +13,6 @@ class menu {
         console.printText("1 - PRINT ALL EMPLOYEES (CSV)")
         console.printText("2 - REWRITE XML FILE")
         console.printText("3 - MODIFY EMPLOYEE (XML)")
-        console.printText("4 - PRINT ALL EMPLOYEES (XML)")
         console.printText("Input anything else to exit.")
         console.printText()
         console.printText("> ", false)
