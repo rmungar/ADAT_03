@@ -9,7 +9,9 @@ package org.example
 fun main() {
 
 
+    val menu = menu()
 
+    menu.startMenu()
 
 
 }
