@@ -59,15 +59,15 @@ class fileReader() {
                 val elementDepartment = elementNode.getElementsByTagName("department")
                 val elementSalary = elementNode.getElementsByTagName("salary")
 
-                if (elementSalary.item(0).textContent.toDouble() > 2000){
-                    val employee = Employees(
-                        elementId.textContent.toInt(),
-                        elementSurname.item(0).textContent,
-                        elementDepartment.item(0).textContent,
-                        elementSalary.item(0).textContent.toDouble())
-                    employeeList.add(employee)
-                }
 
+                val employee = Employees(
+                    elementId.textContent.toInt(),
+                    elementSurname.item(0).textContent,
+                    elementDepartment.item(0).textContent,
+                    elementSalary.item(0).textContent.toDouble()
+                )
+
+                employeeList.add(employee)
             }
 
         }

@@ -60,7 +60,7 @@ class xmlWriter() {
 
             }
             val source = DOMSource(document)
-            val result: StreamResult = StreamResult(newEmployeesFile)
+            val result = StreamResult(newEmployeesFile)
 
             val transformer = TransformerFactory.newInstance().newTransformer()
             transformer.setOutputProperty(OutputKeys.INDENT, "yes")

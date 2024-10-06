@@ -11,7 +11,7 @@ class menu {
         console.printText()
         console.printText("---------MENU----------")
         console.printText("1 - PRINT ALL EMPLOYEES (CSV)")
-        console.printText("2 - REWRITE XML FILE")
+        console.printText("2 - WRITE XML FILE")
         console.printText("3 - MODIFY EMPLOYEE (XML)")
         console.printText("Input anything else to exit.")
         console.printText()
@@ -48,22 +48,22 @@ class menu {
 
                     xmlWriter.writeFile(employeesList)
 
-                    console.printText("File rewritten\n")
+                    console.printText("File written.\n")
 
-                    console.printText("-----EMPLOYEES LIST-----")
 
-                    fileReader.readEmployeesXmlFile().forEach { console.printText(it.toString()) }
-
-                    console.printText()
 
                 }
 
                 "3" -> {
+
                     // TERCERA PARTE, MODIFICACIÓN DE UN ARCHIVO XML
+
+                    val fileReader = fileReader()
+
                     while (true) {
                         var validId = false
                         var validSalary = false
-                        console.printText("Please enter a valid id and salary")
+                        console.printText("Please enter a valid id and salary.")
                         try {
 
                             val xmlWriter = xmlWriter()
@@ -79,14 +79,21 @@ class menu {
                             validSalary = true
 
                             xmlWriter.editEmployee(id, salary)
+                            console.printText("Employee modified successfully.")
+                            console.printText()
                             break
 
                         } catch (e: NumberFormatException) {
 
-                            if (validId && !validSalary) console.printText("The value supplied for the employee's salary was not accepted")
-                            else console.printText("The value supplied for the employee's id was not accepted")
+                            if (validId && !validSalary) console.printText("The value supplied for the employee's salary was not accepted.")
+                            else console.printText("The value supplied for the employee's id was not accepted.")
                         }
                     }
+                    console.printText("-----EMPLOYEES LIST-----")
+
+                    fileReader.readEmployeesXmlFile().forEach { console.printText(it.toString()) }
+
+                    console.printText()
                 }
 
                 else -> {
